@@ -16,9 +16,7 @@ func main() {
 
 	fmt.Println("Server running at localhost:10000")
 
-	for {
-		waitClient(listener)
-	}
+	waitClient(listener)
 
 }
 
@@ -31,7 +29,7 @@ func waitClient(listener net.Listener) {
 
 	go goEcho(connection)
 
-	// waitClient(listener)
+	waitClient(listener)
 }
 
 func goEcho(connection net.Conn) {
